@@ -1,0 +1,142 @@
+$background-primary: #EEEDED;
+$input-default: #D0D1D5;
+
+$form-margin: 0 auto;
+$default-margin-padding: 2%;
+$max-width: 40%;
+$form-radius: 1em;
+$form-background-color: white;
+$form-font-weight: 1em;
+
+html,body {
+  height: 100%;
+}
+body { 
+  margin: 0;  
+  display: flex;
+  flex-direction: column;
+  background-color: $background-primary !important; 
+}
+
+.wrapper {
+  flex: 1 0 auto; 
+}
+
+// Index Page
+
+.indexBG {
+  background-image: url(../../../public/uploads/large_photo_1544085311_11a028465b03_29d7651dcc.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgBlur {
+  margin-top: 2%;
+  padding: 4%;
+  border-radius: $form-radius;
+  background-color: rgba(255, 255, 255, 0.219);
+  backdrop-filter: blur(20px);
+}
+
+.infoBox {
+  margin-top: 2%;
+  padding: 2%;
+  border-radius: $form-radius;
+  background-color: $form-background-color;
+}
+
+#indexFeature {
+  .col {
+    flex: 0 0 0% !important;
+    padding-right: 0px !important;
+  }
+}
+
+// Products Page
+
+.productSearch {
+  padding-left: 1% !important;
+
+  .form-control {
+    max-width: 30%;
+  }
+}
+
+.featuredProducts {
+  margin-bottom: $default-margin-padding !important;
+
+  .card-img-custom {
+    max-height: 180px !important; 
+  }
+
+}
+
+
+.results {
+  margin-bottom: $default-margin-padding !important;
+}
+
+.result {
+  border-bottom: #959494 2px solid;
+  min-height: 140px;
+
+  .content {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .left {
+    width: 240px;
+    min-width: 19%;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: -webkit-fill-available; //100%
+  }
+
+  .description {
+    display: flex;
+    margin-left: $default-margin-padding;
+    max-width: 700px;
+  }
+}
+
+// Cart Page
+
+.input-form {
+  margin: $form-margin;
+  margin-top: $default-margin-padding;
+  max-width: $max-width;
+  padding: $default-margin-padding;
+  border-radius: $form-radius;
+  background-color: $form-background-color;
+}
+
+.footer {
+  flex-shrink: 0; 
+  background-color: white;
+  min-height: 2% !important;
+  padding: .5%;
+
+}
+
+
+// Login Page
+
+.logInForm {
+  .input-group {
+  flex-direction: column;
+  }
+  .form-control {
+    width: 100% !important;
+    background-color: $input-default;
+  }
+  .btn {
+    margin-top: 10%;
+  }
+}

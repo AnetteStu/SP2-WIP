@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/css/style.css" />
+    <title>Cart</title>
+  </head>
+  <body>
+    <div class="wrapper">    
+        <div class="navPut"></div>
+
+        <div class="container" id="login">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item" aria-current="page"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active">Login</li>
+                </ol>
+            </nav>
+            <form class="input-form logInForm">
+                <div class="input-group mb-3">
+                    <label for="email">E-mail</label> 
+                    <input type="text" class="form-control" id="email" placeholder="E-mail" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" aria-label="Password" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <button type="button" id="loginBtn" class="btn btn-primary">Log In</button>
+            </form>
+        </div>
+    </div>    
+    <!-- Anything below above line is excluded from Wrapper -->
+
+  <div class="footer">.</div>
+  <script src="../js/script.js" type="module"></script>
+  <script src="../js/modules/loginValidation.js" type="module"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script> 
+  </body>
+</html>
