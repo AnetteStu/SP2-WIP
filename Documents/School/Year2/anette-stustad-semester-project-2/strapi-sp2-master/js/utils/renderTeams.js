@@ -1,24 +1,24 @@
-import { featureCards } from "./variables.js"; 
-import {container, baseUrl} from "./variables.js";
+import { featureCards } from "./variables.js";
+import { container, baseUrl } from "./variables.js";
+import { fetchProducts } from "../modules/products.js";
 
-const url = baseUrl+"products"
+const url = baseUrl + "products";
 
 export async function updateProducts() {
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    console.log(json);
 
-    try {
-        const response = await fetch(url);
-        const json = await response.json();
-        console.log(json);
+    container.innerHTML = "";
 
-        container.innerHTML = "";
+    for (let i = 0; i < json.length; i++) {
+      if (i === 10) {
+        break;
+      }
 
-        for (let i = 0; i < json.length; i++) {
-            if (i === 10) {
-                break;
-            }
-
-            if (json[i].featured === true) {
-                container.innerHTML += `
+      if (json[i].featured === true) {
+        container.innerHTML += `
                             <div class="d-flex position-relative result">
                                 <img src="http://localhost:1337${json[i].image.url}" width="10%" class="flex-shrink-0 me-3" alt="...">
                                 <div class="content">
@@ -33,31 +33,28 @@ export async function updateProducts() {
                                 </div>
                             </div>  
                             `;
-           }
-        }
-
-
-
-    } catch(error) {
-        console.log("there was en error")
+      }
     }
+  } catch (error) {
+    console.log("there was en error");
+  }
 }
 
 export async function fetchFeatured() {
-    try {
-        const response = await fetch(url);
-        const json = await response.json();
-        console.log(json);
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    console.log(json);
 
-        featureCards.innerHTML = "";
+    featureCards.innerHTML = "";
 
-        for (let i = 0; i < json.length; i++) {
-            if (i === 10) {
-                break;
-            }
+    for (let i = 0; i < json.length; i++) {
+      if (i === 10) {
+        break;
+      }
 
-            if (json[i].featured === true) {
-                featureCards.innerHTML += `
+      if (json[i].featured === true) {
+        featureCards.innerHTML += `
                                     <div class="col">     
                                         <div class="card" style="width: 18rem;">
                                             <img src="http://localhost:1337${json[i].image.url}" class="card-img-top card-img-custom" alt="${json[i].title}">
@@ -67,10 +64,10 @@ export async function fetchFeatured() {
                                                 
                                             </div>
                                         </div>                           
-                                      `
-            }
-        } 
-    } catch(error) {
-        console.log("there was en error: " + error)
+                                      `;
+      }
     }
+  } catch (error) {
+    console.log("there was en error: " + error);
+  }
 }
