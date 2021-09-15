@@ -14,8 +14,7 @@
 // Use this file to manage active scripts
 
 import determenNav from "./utils/navbar.js"; //Go back to and make it responsive
-import { fetchFeatured } from "./utils/renderTeams.js";
-import { fetchProducts } from "./modules/products.js";
+import { generateFeatured } from "./utils/renderTeams.js";
 import { addToCart } from "./modules/addToCart.js";
 
 function where() {
@@ -33,15 +32,12 @@ function where() {
   if (location.href.includes("products")) {
     console.log("Current page is products.html");
     determenNav();
-    fetchFeatured();
-    fetchProducts();
     addToCart();
     return false;
   }
   if (location.href.includes("index")) {
     console.log("Current page is index.html");
     determenNav();
-    fetchFeatured();
     return false;
   } else console.log("elsewhere");
 }
