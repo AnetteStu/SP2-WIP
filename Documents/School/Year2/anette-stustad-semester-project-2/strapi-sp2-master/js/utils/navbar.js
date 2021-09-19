@@ -48,7 +48,7 @@ function fetchUser() {
     console.log(userStatus);
     return;
   }
-  return loginStatus;
+  return userStatus, loginStatus;
 }
 fetchUser();
 
@@ -94,11 +94,20 @@ export default function determenNav() {
                                 `;
 }
 
-const logoutBtn = document.querySelector("#logout");
-// Returns 'cannot read properties of null'
-logoutBtn.addEventListener("click", logout);
+export function setupLogoutBtn() {
+  if (userStatus) {
+    const logoutBtn = document.querySelector("#logout");
+    logoutBtn.addEventListener("click", logout);
+
+    return;
+  } else {
+    console.log("User not signed in");
+    return;
+  }
+}
 
 export function logout() {
   localStorage.removeItem(tokenKey);
   localStorage.removeItem(userKey);
+  location.reload();
 }

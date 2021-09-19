@@ -1,4 +1,8 @@
+import { fetchUser, userStatus } from "./loginEvaluation.js";
 import { featureCards, container } from "./variables.js";
+import deleteProduct from "../modules/deleteProduct.js";
+
+console.log(userStatus);
 
 // Featured Render
 export function renderFeatured(product) {
@@ -22,24 +26,22 @@ export function renderFeatured(product) {
   }
 }
 
-// Product Render
 export function renderProduct(productToRender) {
   container.innerHTML = "";
 
   productToRender.forEach((team) => {
-    // function checkImg() {
-    //   const baseUrl = "http://localhost:1337";
-    //   let imageDest = team.image.url;
-
-    //   if (!imageDest) {
-    //     imageDest = team.image_url;
-    //   }
-    //   imageDest = baseUrl + team.image.url;
-    //   console.log(imageDest);
-    //   return imageDest;
-    // }
-
-    // Use ${checkImg()} in img src, fix code
+    let authUser = `<button class="btn btn-primary cartBtn"><i class="fa-shopping-cart fas" data-id="${team.id}" data-name="${team.name}"></i></button>`;
+    if (userStatus) {
+      authUser = `
+          <button class="btn btn-primary cartBtn"><i class="fa-shopping-cart fas" data-id="${
+            team.id
+          }"></i></button>
+          <button type="button" class="btn btn-secondary">Edit</button>
+          <button type="button" class="btn btn-danger deleteBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-id="${
+            team.id
+          }" onclick="${deleteProduct(team.id)}">Delete</button>
+      `;
+    }
     container.innerHTML += `
                                <div class="d-flex position-relative result">
                                    <img src="" width="10%" class="flex-shrink-0 me-3" alt="...">
@@ -50,7 +52,7 @@ export function renderProduct(productToRender) {
                                        </div>
                                        <p class="description">${team.description}</p>
                                        <div class="right">
-                                           <button class="btn btn-primary cartBtn"><i class="fas fa-shopping-cart"></i></button>
+                                           ${authUser}
                                        </div>
                                    </div>
                                </div>

@@ -44,7 +44,7 @@ async function doLogin(username, password) {
 
     if (json.user) {
       console.log("Login success");
-      // location.href = "cart.html";
+      location.href = "cart.html";
 
       saveToken(json.jwt);
       saveUser(json.user);
