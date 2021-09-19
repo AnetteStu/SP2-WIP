@@ -5,7 +5,6 @@ console.log(deleteButton);
 // });
 
 export default function deleteProduct(id) {
-  console.log(id);
   const deleteConfirmBtn = document.querySelector(".deleteConfirmBtn");
 
   deleteConfirmBtn.addEventListener("click", confirmDelete(id));
@@ -19,4 +18,7 @@ export function confirmDelete(id) {
 
 // When initial Delete button is hit, save the dataset-id to a variable in deleteProduct()
 // When confirm button is tapped, fetch id from deleteProduct()
-// Populate warning popup with name of the selected product, and when the "Confonfirm" button is clicked,
+// Populate warning popup with name of the selected product, and when the "Conform" button is clicked, Run conformDelete()
+
+// I'm unable to add forEach loop which would be handy
+//Neither of the functions are being declaired yet it is being declaired for all the products and does not get called when clicking on the button. It's currently less than an hour till hand in and I don't know if I can fix it

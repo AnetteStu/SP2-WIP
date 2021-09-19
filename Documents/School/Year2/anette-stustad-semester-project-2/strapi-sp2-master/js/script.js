@@ -1,7 +1,7 @@
 import { url } from "./utils/variables.js";
 import { renderFeatured, renderProduct } from "./utils/renderTeams2.js";
 import { searchInput, searchProducts } from "./modules/searchEngine.js";
-import deleteProduct from "./modules/deleteProduct.js";
+// import deleteProduct from "./modules/deleteProduct.js";
 import { handleCartItems } from "./modules/addToCart.js";
 import determenNav from "./utils/navbar.js";
 import { setupLogoutBtn } from "./utils/navbar.js";
