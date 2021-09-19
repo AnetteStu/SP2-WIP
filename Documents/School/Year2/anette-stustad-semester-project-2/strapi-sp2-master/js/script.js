@@ -1,44 +1,53 @@
-// Import from modules
+import { url } from "./utils/variables.js";
+import { renderFeatured, renderProduct } from "./utils/renderTeams2.js";
+// import { searchProducts } from "./modules/searchEngine.js";
+// import { handleCartItems } from "./utils/renderTeams2.js";
+import determenNav from "./utils/navbar.js";
+import { determenUser } from "./utils/navbar.js";
 
-// Can import 1 default from each file
+export const featureCards = document.querySelector(".featureCards");
+export const container = document.querySelector(".results");
+const cartBtns = document.querySelectorAll(".cartBtn button");
 
-// Import default= import NAME from ""; NAME can be anything because this is the default, this is not recomended though
-// Import non-def= import {NAME} from ".js";
-// Import multiple= NAME, {NAME} from ".js"; only from same file
+document.documentElement.addEventListener("click", function (e) {
+  // console.log(e.target);
+});
 
-// Can import variables with aliases using NAME as NEWNAME
+determenNav();
 
-// Import and use functions by making the function in the file and calling it here
-// (Not sure how this works for self-calling functions such as listener events)
+async function getTeams() {
+  try {
+    console.log(url);
+    const response = await fetch(url);
+    const json = await response.json();
+    console.log(json);
 
-// Use this file to manage active scripts
+    const teams = json;
 
-import determenNav from "./utils/navbar.js"; //Go back to and make it responsive
-import { generateFeatured } from "./utils/renderTeams.js";
-import { addToCart } from "./modules/addToCart.js";
+    if (location.href.includes("index")) {
+      console.log("Current page is index.html");
+      renderFeatured(teams);
+      return false;
+    }
 
-function where() {
-  if (location.href.includes("login")) {
-    console.log("Current page is login.html");
-    determenNav();
-    return false;
+    if (location.href.includes("products")) {
+      console.log("Current page is products.html");
+      renderFeatured(teams);
+      renderProduct(teams);
+      return false;
+    }
+  } catch (error) {
+    console.log("an error occured " + error);
   }
-  if (location.href.includes("cart")) {
-    console.log("Current page is cart.html");
-    determenNav();
-    return false;
-  }
-
-  if (location.href.includes("products")) {
-    console.log("Current page is products.html");
-    determenNav();
-    addToCart();
-    return false;
-  }
-  if (location.href.includes("index")) {
-    console.log("Current page is index.html");
-    determenNav();
-    return false;
-  } else console.log("elsewhere");
 }
-where();
+getTeams();
+
+// Try to fetch buttons from products and add Functions to them
+cartBtns.forEach((item) => {
+  item.addEventListener("click", handleCartItems());
+});
+
+export function handleCartItems(event) {
+  console.log("click");
+  console.log(event);
+}

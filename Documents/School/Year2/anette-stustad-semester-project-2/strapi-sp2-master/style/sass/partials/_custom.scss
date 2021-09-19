@@ -1,5 +1,5 @@
-$background-primary: #EEEDED;
-$input-default: #D0D1D5;
+$background-primary: #eeeded;
+$input-default: #d0d1d5;
 
 $form-margin: 0 auto;
 $default-margin-padding: 2%;
@@ -8,18 +8,23 @@ $form-radius: 1em;
 $form-background-color: white;
 $form-font-weight: 1em;
 
-html,body {
+html,
+body {
   height: 100%;
 }
-body { 
-  margin: 0;  
+body {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  background-color: $background-primary !important; 
+  background-color: $background-primary !important;
+}
+
+.navBar {
+  justify-content: space-around !important;
 }
 
 .wrapper {
-  flex: 1 0 auto; 
+  flex: 1 0 auto;
 }
 
 // Index Page
@@ -66,11 +71,9 @@ body {
   margin-bottom: $default-margin-padding !important;
 
   .card-img-custom {
-    max-height: 180px !important; 
+    max-height: 180px !important;
   }
-
 }
-
 
 .results {
   margin-bottom: $default-margin-padding !important;
@@ -118,19 +121,17 @@ body {
 }
 
 .footer {
-  flex-shrink: 0; 
+  flex-shrink: 0;
   background-color: white;
   min-height: 2% !important;
-  padding: .5%;
-
+  padding: 0.5%;
 }
-
 
 // Login Page
 
 .logInForm {
   .input-group {
-  flex-direction: column;
+    flex-direction: column;
   }
   .form-control {
     width: 100% !important;
@@ -138,5 +139,24 @@ body {
   }
   .btn {
     margin-top: 10%;
+  }
+}
+
+// Submit page
+
+.submitForm {
+  .input-group {
+    flex-direction: column;
+  }
+  .form-control {
+    width: 100% !important;
+    background-color: $input-default;
+  }
+  .btn {
+    margin-top: 10%;
+  }
+
+  .card {
+    display: none !important;
   }
 }

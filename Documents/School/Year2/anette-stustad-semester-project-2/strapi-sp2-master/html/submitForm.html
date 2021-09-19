@@ -5,53 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/css/style.css" />
-    <title>Cart</title>
+    <title>Submit Product</title>
   </head>
   <body>
     <div class="wrapper">    
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">
-            <img src="../style/Logo.svg" alt="Shoe day Logo" height="55" class="d-inline-block align-text-top"/>
-          </a>
-          <div class="container-fluid">
-            <button
-              class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-              <div class="row">
-                <div class="container">
-                  <div class="collapse navbar-collapse" id="navbarText">          
-                    <div class="d-flex bd-highlight">
-                      <div class="p-2 flex-grow-1 bd-highlight">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li class="nav-item">
-                            <a class="nav-link" href="index.html" >HOME</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="products.html">PRODUCTS</a>
-                          </li>
-                        </ul>
-                    </div>
-                    </div>
-                    <div class="d-flex bd-highlight">
-                      <div class="p-2 bd-highlight">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li class="nav-item">
-                            <a class="nav-link" href="cart.html" id="cart">CART</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="login.html">LOGIN</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </nav>
-        <!-- End of Nav -->
-
+      <div class="navPut"></div>
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -60,7 +18,7 @@
                   <li class="breadcrumb-item active">Submit Form</li>
                 </ol>
             </nav>
-            <div class="input-form logInForm">
+            <div class="input-form submitForm">
                 <div class="input-group mb-3">
                     <!-- <label for="title" class="form-label">id</label> Will auto-input
                     <input type="text" class="form-control" placeholder="E-mail" aria-label="Username" aria-describedby="basic-addon1"> -->
@@ -71,21 +29,38 @@
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control" id="title" placeholder="Title of Product" aria-describedby="inputGroup-sizing-default">
                 </div>
+                <!-- <div class="input-group mb-3">
+                  <label for="url" class="form-label">Image URL</label>
+                  <input type="file" class="form-control" id="url">
+                </div> -->
                 <div class="input-group mb-3">
                     <label for="url" class="form-label">Image URL</label>
                     <input type="text" class="form-control" id="url" placeholder="URL" aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" id="description" rows="3"></textarea>
+                  <label for="description" class="form-label">Description</label>
+                  <textarea class="form-control" id="description" rows="3"></textarea>
+                </div>
+                <label class="form-check-label" for="flexSwitchCheckDefault">Featured</label>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      <p>Error text HERE</p>
+                      </blockquote>
                   </div>
-                <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+                <button type="submit" class="btn btn-primary submitButton">Submit</button>
             </div>
         </div>
     </div>    
     <!-- Anything below above line is excluded from Wrapper -->
 
   <div class="footer">.</div>
+  <script src="../js/script.js" type="module"></script>
+  <script src="../js/modules/submitProduct.js" type="module"></script>
     <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

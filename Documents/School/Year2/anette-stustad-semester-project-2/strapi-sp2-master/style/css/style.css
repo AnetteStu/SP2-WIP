@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -11,7 +12,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #EEEDED !important;
+  background-color: #eeeded !important;
+}
+
+.navBar {
+  -ms-flex-pack: distribute !important;
+      justify-content: space-around !important;
 }
 
 .wrapper {
@@ -126,7 +132,7 @@ body {
       flex-shrink: 0;
   background-color: white;
   min-height: 2% !important;
-  padding: .5%;
+  padding: 0.5%;
 }
 
 .logInForm .input-group {
@@ -138,11 +144,31 @@ body {
 
 .logInForm .form-control {
   width: 100% !important;
-  background-color: #D0D1D5;
+  background-color: #d0d1d5;
 }
 
 .logInForm .btn {
   margin-top: 10%;
+}
+
+.submitForm .input-group {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.submitForm .form-control {
+  width: 100% !important;
+  background-color: #d0d1d5;
+}
+
+.submitForm .btn {
+  margin-top: 10%;
+}
+
+.submitForm .card {
+  display: none !important;
 }
 
 /*!
